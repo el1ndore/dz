@@ -19,19 +19,19 @@
             <img src="assets/img/logo.png" alt="Revo Coffee">
         </div>
         <ul class="menu">
-            <li>Главная</li>
-            <li>Ваш кофе</li>
-            <li>Подарочные наборы</li>
-            <li>Контакты</li>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#coffee">Ваш кофе</a></li>
+            <li><a href="#gifts">Подарочные наборы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
         </ul>
     </div>
 </header>
 
 <main>
 
-<section class="hero">
+<section class="hero" id="home">
     <div class="hero-image">
-        <img src="assets/img/hero.jpg" alt="">
+        <img src="assets/img/hero.jpg" alt="Подарочный набор Revo Coffee">
     </div>
 
     <div class="hero-content">
@@ -51,13 +51,13 @@
         </div>
 
         <div class="hero-price">
-            <strong>2 500</strong>
+            <strong>2 500 ₽</strong>
             <span>Подарочный набор «Вьетнамский фильтр-кофе»</span>
         </div>
     </div>
 </section>
 
-<section class="section">
+<section class="section" id="gifts">
     <div class="section-head">
         <h2>КОМБО-НАБОРЫ</h2>
         <p>Кофе, подобранный под ваш вкус</p>
@@ -99,7 +99,7 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section" id="coffee">
     <div class="section-head">
         <h2>ВЫБЕРИТЕ СВОЙ ВКУС</h2>
         <p>Найдите кофе, который подходит именно вам</p>
@@ -143,9 +143,31 @@
 
 </main>
 
-<footer class="footer">
+<footer class="footer" id="contacts">
     © Revo Coffee — 2025
 </footer>
+
+<script>
+    let lastScroll = 0;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+            header.classList.remove('header--hidden');
+            return;
+        }
+
+        if (currentScroll > lastScroll) {
+            header.classList.add('header--hidden');
+        } else {
+            header.classList.remove('header--hidden');
+        }
+
+        lastScroll = currentScroll;
+    });
+</script>
 
 </body>
 </html>
