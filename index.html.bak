@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -19,14 +18,7 @@
         <div class="logo">
             <img src="assets/img/logo.png" alt="Revo Coffee">
         </div>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
-            <span class="menu-toggle__line"></span>
-            <span class="menu-toggle__line"></span>
-            <span class="menu-toggle__line"></span>
-        </button>
-
-        <ul class="menu" id="mainNav">
+        <ul class="menu">
             <li><a href="#home">Главная</a></li>
             <li><a href="#gifts">Подарочные наборы</a></li>
             <li><a href="#coffee">Ваш кофе</a></li>
@@ -155,11 +147,27 @@
     © Revo Coffee — 2025
 </footer>
 
-<button class="scroll-top" id="scrollTop" aria-label="Наверх">
-    ↑
-</button>
+<script>
+    let lastScroll = 0;
+    const header = document.querySelector('.header');
 
-<script src="scripts/menu.js"></script>
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+            header.classList.remove('header--hidden');
+            return;
+        }
+
+        if (currentScroll > lastScroll) {
+            header.classList.add('header--hidden');
+        } else {
+            header.classList.remove('header--hidden');
+        }
+
+        lastScroll = currentScroll;
+    });
+</script>
 
 </body>
 </html>

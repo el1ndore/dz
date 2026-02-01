@@ -1,0 +1,141 @@
+@media (max-width: 1024px) {
+    .nav {
+        padding: 0 15px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .hero {
+        margin: 60px auto 100px;
+    }
+
+    .section {
+        margin: 100px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        z-index: 100;
+        overflow-y: auto;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+        border-radius: 0;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    .menu a:hover {
+        background: transparent;
+        color: #1d1d1d;
+        padding-left: 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        margin: 40px 20px 80px;
+    }
+
+    .hero-content {
+        padding: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .combo-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .section {
+        margin: 80px auto;
+    }
+
+    .section-head h2 {
+        font-size: 28px;
+    }
+
+    .scroll-top {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        width: 100%;
+        padding: 80px 20px 30px;
+    }
+
+    .logo img {
+        height: 24px;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section {
+        padding: 0 15px;
+    }
+
+    .section-head h2 {
+        font-size: 24px;
+    }
+}
